@@ -138,6 +138,7 @@ static void handle_client(int cfd) {
 }
 
 int main(void) {
+    setvbuf(stdout, NULL, _IONBF, 0);
     int sfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sfd < 0) {
         perror("socket");

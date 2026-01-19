@@ -1,0 +1,4 @@
+Q2 iterative server listening on 127.0.0.1:5002
+Serves one client at a time (iterative).
+[2026-01-19 15:19:16] Connected client socket address: 127.0.0.1:38198
+[2026-01-19 15:19:39] Connected client socket address: 127.0.0.1:39170
