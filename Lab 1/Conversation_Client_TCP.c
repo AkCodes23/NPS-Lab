@@ -3,13 +3,14 @@
 #include<sys/socket.h>
 #include<sys/types.h>
 #include<netinet/in.h>
+#include<arpa/inet.h>
 #include<sys/stat.h>
 #include<fcntl.h>
 #include<string.h>
 #include<stdlib.h>
 #define MAXSIZE 50
 
-main()
+int main()
 {
 	char buff[MAXSIZE];
 	int sockfd,retval,i;
@@ -19,7 +20,7 @@ main()
 	if(sockfd==-1)
 	{
 		printf("\nSocket Creation Error");
-		return;
+		return 1;
 	}
 
 	serveraddr.sin_family=AF_INET;
@@ -29,7 +30,7 @@ main()
 	if(retval==-1)
 	{
 		printf("Connection error");
-		return;
+		return 1;
 	}
 
 	for (i = 0; ; i+=1)
@@ -59,4 +60,5 @@ main()
 		}
 	}
 	close(sockfd);
+	return 0;
 }

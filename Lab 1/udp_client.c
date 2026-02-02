@@ -40,7 +40,12 @@ int main()
 		close(sockfd);
 	 	exit(0);
 	}
-	gets(buff);
+	if (fgets(buff, sizeof(buff), stdin)) {
+		// Remove trailing newline if present
+		size_t len = strlen(buff);
+		if (len > 0 && buff[len-1] == '\n')
+			buff[len-1] = '\0';
+	}
 	actuallen=sizeof(serveraddr);
 	for(k=0;k<=strlen(buff);k++)
 	{

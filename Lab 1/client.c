@@ -3,12 +3,13 @@
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <netinet/in.h>
+#include <arpa/inet.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <string.h>
 #define MAXSIZE 50
 
-main()
+int main()
 {
     int sockfd, retval;
     int recedbytes, sentbytes;
@@ -43,4 +44,5 @@ main()
     puts(buff);
     printf("\n");
     close(sockfd);
+    return 0;
 }

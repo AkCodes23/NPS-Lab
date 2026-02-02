@@ -20,6 +20,7 @@ int main()
 	struct sockaddr_in serveraddr,clientaddr;
 	char buff[max],temp[max];
 	int a=0;
+	memset(buff, 0, sizeof(buff));  // Initialize buff to prevent undefined behavior
 	sockfd=socket(AF_INET,SOCK_DGRAM,0);
 	if(sockfd==-1)
 	{
@@ -56,7 +57,12 @@ int main()
 	//actuallen=sizeof(clientaddr);
 	
 
-	gets(buff);
+	if (fgets(buff, sizeof(buff), stdin)) {
+		// Remove trailing newline if present
+		size_t len = strlen(buff);
+		if (len > 0 && buff[len-1] == '\n')
+			buff[len-1] = '\0';
+	}
 	retval=sendto(sockfd,buff,sizeof(buff),0,(struct sockaddr *)&clientaddr,actuallen);
 	if(retval==-1)
 	{
