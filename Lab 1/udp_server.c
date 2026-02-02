@@ -20,6 +20,7 @@ int main()
 	struct sockaddr_in serveraddr,clientaddr;
 	char buff[max],temp[max];
 	int a=0;
+	memset(buff, 0, sizeof(buff));  // Initialize buff to prevent undefined behavior
 	sockfd=socket(AF_INET,SOCK_DGRAM,0);
 	if(sockfd==-1)
 	{
