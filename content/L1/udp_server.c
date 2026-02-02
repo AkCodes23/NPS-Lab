@@ -56,7 +56,12 @@ int main()
 	//actuallen=sizeof(clientaddr);
 	
 
-	gets(buff);
+	if (fgets(buff, sizeof(buff), stdin)) {
+		// Remove trailing newline if present
+		size_t len = strlen(buff);
+		if (len > 0 && buff[len-1] == '\n')
+			buff[len-1] = '\0';
+	}
 	retval=sendto(sockfd,buff,sizeof(buff),0,(struct sockaddr *)&clientaddr,actuallen);
 	if(retval==-1)
 	{

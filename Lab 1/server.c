@@ -7,7 +7,7 @@
 #include<netinet/in.h>
 #define MAXSIZE 90
 
-main()
+int main()
 {
 int sockfd,newsockfd,retval;
 socklen_t actuallen;
@@ -27,7 +27,7 @@ serveraddr.sin_family=AF_INET;
 serveraddr.sin_port=htons(3388);
 serveraddr.sin_addr.s_addr=htonl(INADDR_ANY);
 retval=bind(sockfd,(struct sockaddr*)&serveraddr,sizeof(serveraddr));
-if(retval==1)
+if(retval==-1)
 {
 printf("Binding error");
 close(sockfd);
@@ -67,5 +67,6 @@ close(newsockfd);
 
 close(sockfd);
 close(newsockfd);
+return 0;
 }
 
