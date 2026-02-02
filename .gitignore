@@ -1,0 +1,40 @@
+# Compiled binaries
+*.o
+*.out
+*.exe
+
+# Lab executables
+Lab*/client
+Lab*/server
+Lab*/udp_client
+Lab*/udp_server
+Lab*/conv_tcp_client
+Lab*/conv_tcp_server
+Lab*/palin_serv
+Lab*/*_client
+Lab*/*_server
+Lab*/*_client1
+Lab*/*_client2
+Lab*/*_client_extra
+Lab*/concurrent-client
+Lab*/concurrent-server
+Lab*/AQ1_client
+Lab*/AQ1_server
+Lab*/Q1_Client
+Lab*/Q1_server
+Lab*/Q2_Client
+Lab*/Q2_server
+Lab*/Q3_client
+Lab*/Q3_server
+Lab*/dns_client
+Lab*/dns_server
+
+# Log and PID files
+*.log
+*.pid
+
+# Temporary files
+*.tmp
+*.bak
+*~
+.DS_Store
