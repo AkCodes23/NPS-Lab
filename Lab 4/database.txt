@@ -1,0 +1,9 @@
+# domain ip
+example.com 93.184.216.34
+localhost 127.0.0.1
+openai.com 104.18.12.123
+microsoft.com 13.107.246.45
+google.com 142.251.41.14
+facebook.com 157.240.27.35
+github.com 140.82.113.4
+amazon.com 54.239.28.30
