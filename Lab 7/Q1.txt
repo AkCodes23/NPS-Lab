@@ -1,0 +1,74 @@
+Leaky Bucket Simulation
+------------------------
+Bucket Size = 10 bytes
+Output Rate = 1 byte/sec
+
+Time  1 sec: Packet arrived (4 bytes)
+   -> Conforming (Accepted)
+   Bucket Content: 4 bytes
+
+Time  2 sec: Packet arrived (4 bytes)
+   -> Conforming (Accepted)
+   Bucket Content: 7 bytes
+
+Time  3 sec: Packet arrived (4 bytes)
+   -> Conforming (Accepted)
+   Bucket Content: 10 bytes
+
+   Bucket Content: 9 bytes
+
+Time  5 sec: Packet arrived (4 bytes)
+   -> Non-Conforming (Dropped)
+   Bucket Content: 8 bytes
+
+Time  6 sec: Packet arrived (4 bytes)
+   -> Non-Conforming (Dropped)
+   Bucket Content: 7 bytes
+
+   Bucket Content: 6 bytes
+
+Time  8 sec: Packet arrived (4 bytes)
+   -> Conforming (Accepted)
+   Bucket Content: 9 bytes
+
+   Bucket Content: 8 bytes
+
+   Bucket Content: 7 bytes
+
+Time 11 sec: Packet arrived (4 bytes)
+   -> Conforming (Accepted)
+   Bucket Content: 10 bytes
+
+Time 12 sec: Packet arrived (4 bytes)
+   -> Non-Conforming (Dropped)
+   Bucket Content: 9 bytes
+
+   Bucket Content: 8 bytes
+
+   Bucket Content: 7 bytes
+
+Time 15 sec: Packet arrived (4 bytes)
+   -> Conforming (Accepted)
+   Bucket Content: 10 bytes
+
+Time 16 sec: Packet arrived (4 bytes)
+   -> Non-Conforming (Dropped)
+   Bucket Content: 9 bytes
+
+   Bucket Content: 8 bytes
+
+   Bucket Content: 7 bytes
+
+Time 19 sec: Packet arrived (4 bytes)
+   -> Conforming (Accepted)
+   Bucket Content: 10 bytes
+
+   Bucket Content: 9 bytes
+
+   Bucket Content: 8 bytes
+
+   Bucket Content: 7 bytes
+
+   Bucket Content: 6 bytes
+
+   Bucket Content: 5 bytes

@@ -1,0 +1,116 @@
+TOKEN BUCKET SIMULATION
+-------------------------
+
+Time = 0.5 sec
+Tokens available before sending: 50.00 KB
+Packet transmitted (15 KB)
+Tokens left: 35.00 KB
+
+Time = 1.0 sec
+Tokens available before sending: 40.00 KB
+Packet transmitted (15 KB)
+Tokens left: 25.00 KB
+
+Time = 1.5 sec
+Tokens available before sending: 30.00 KB
+Packet transmitted (15 KB)
+Tokens left: 15.00 KB
+
+Time = 2.0 sec
+Tokens available before sending: 20.00 KB
+Packet transmitted (15 KB)
+Tokens left: 5.00 KB
+
+Time = 2.5 sec
+Tokens available before sending: 10.00 KB
+Packet queued (Not enough tokens)
+Tokens left: 10.00 KB
+
+Time = 3.0 sec
+Tokens available before sending: 15.00 KB
+Packet transmitted (15 KB)
+Tokens left: 0.00 KB
+
+Time = 3.5 sec
+Tokens available before sending: 5.00 KB
+Packet queued (Not enough tokens)
+Tokens left: 5.00 KB
+
+Time = 4.0 sec
+Tokens available before sending: 10.00 KB
+Packet queued (Not enough tokens)
+Tokens left: 10.00 KB
+
+Time = 4.5 sec
+Tokens available before sending: 15.00 KB
+Packet transmitted (15 KB)
+Tokens left: 0.00 KB
+
+Time = 5.0 sec
+Tokens available before sending: 5.00 KB
+Packet queued (Not enough tokens)
+Tokens left: 5.00 KB
+
+Total queued packets: 4
+
+
+(i) Tokens left after 1.5 seconds?
+
+Let’s compute manually.
+
+At t = 0:
+
+Bucket = 50 KB
+
+t = 0.5:
+
+Tokens added = 10 × 0.5 = 5 KB
+Bucket = 50 (max limit)
+Send 15 KB
+Remaining = 35 KB
+
+t = 1.0:
+
+Add 5 KB → 40 KB
+Send 15 KB
+Remaining = 25 KB
+
+t = 1.5:
+
+Add 5 KB → 30 KB
+Send 15 KB
+Remaining = 15 KB
+
+✅ Answer: 15 KB tokens remain after 1.5 seconds
+🔹 (ii) When will packets start being queued?
+
+Continue calculation:
+
+t = 2.0 → tokens = 20 → send → left 5
+t = 2.5 → tokens = 10 → ❌ cannot send (needs 15)
+
+✅ Packets start being queued at t = 2.5 seconds
+🔹 (iii) Maximum Burst Size (when R = 20 KBps)
+
+In a token bucket:
+
+Maximum burst size = bucket size b
+
+Because:
+
+Bucket initially full (50 KB)
+
+Sender can transmit instantly (subject to R)
+
+If R = 20 KBps:
+
+Maximum instantaneous burst = 50 KB
+
+After that, transmission limited to 10 KBps (token rate)
+
+✅ Maximum burst size = 50 KB
+✅ Final Answers Summary
+Question	Answer
+Tokens after 1.5 sec	15 KB
+Queue starts at	2.5 sec
+Maximum burst size	50 KB
